@@ -33,7 +33,7 @@
             <version>${spring-ai-alibaba.version}</version>
         </dependency>
 
-        <!-- .env -->
+        <!-- 读取 .env 文件 -->
         <dependency>
             <groupId>io.github.cdimascio</groupId>
             <artifactId>dotenv-java</artifactId>

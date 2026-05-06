@@ -1,3 +1,49 @@
+# SpringAI RAG 智能问答系统（Java 企业级）
+
+基于 SpringBoot 3 + SpringAI Alibaba + 通义千问 + RAG 构建的企业级智能问答
+
+## 功能
+- 纯 Java 开发 AI 应用
+- 通义千问大模型对接
+- RAG 检索增强生成
+- .env 安全密钥管理
+- 支持私有化部署
+
+## 技术栈
+- Java 17
+- SpringBoot 3.3.4
+- SpringAI Alibaba
+- 通义千问大模型
+- RAG
+
+## 快速启动
+1. 复制 .env.example 为 .env
+2. 填写 DASHSCOPE_API_KEY
+3. 启动项目
+4. 访问接口测试
+
+
+# 项目结构
+```plantuml
+springai-rag-demo/
+ ├── src/
+ │   ├── main/
+ │   │   ├── java/com/xxx/
+ │   │   │   ├── config/        # 配置类
+ │   │   │   ├── service/       # 业务逻辑
+ │   │   │   ├── controller/    # 接口
+ │   │   │   └── SpringaiRagApplication.java
+ │   │   └── resources/
+ │   │       ├── application.yml
+ │   │       └── static/
+ ├── .env                       # 密钥（不上传 Git）
+ ├── .env.example               # 示例配置（上传 Git）
+ ├── .gitignore
+ ├── README.md
+ └── pom.xml
+```
+
+
 # Java后端转LLM应用开发转型规划记录
 
 本人拥有15年Java后端开发经验，结合当前AI行业发展趋势及邯郸本地就业现状，制定以下转型路线：**Java 后端 → LLM 应用开发 → RAG/Agent 工程 → 私有化部署 → LLMOps/AI 架构**，各阶段详细规划如下。
