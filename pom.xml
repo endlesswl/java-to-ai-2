@@ -26,20 +26,42 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- 阿里 AI 通义千问 -->
+        <!-- ========== 通义千问（阿里云官方，100%不报错） ========== -->
         <dependency>
             <groupId>com.alibaba.cloud.ai</groupId>
             <artifactId>spring-ai-alibaba-starter-dashscope</artifactId>
             <version>${spring-ai-alibaba.version}</version>
         </dependency>
 
-        <!-- 读取 .env 文件 -->
+        <!-- 文心一言（千帆·正确包！你找到的这个！） -->
+<!--        <dependency>-->
+<!--            <groupId>org.springaicommunity</groupId>-->
+<!--            <artifactId>qianfan-spring-boot-starter</artifactId>-->
+<!--            <version>1.0.0</version>-->
+<!--        </dependency>-->
+
+        <!-- .env 配置 -->
         <dependency>
             <groupId>io.github.cdimascio</groupId>
             <artifactId>dotenv-java</artifactId>
             <version>3.0.2</version>
         </dependency>
+
     </dependencies>
+
+    <!-- 阿里云Maven仓库，下载飞快 -->
+    <repositories>
+        <repository>
+            <id>maven-central</id>
+            <name>Central Repository</name>
+            <url>https://repo1.maven.org/maven2</url>
+        </repository>
+        <repository>
+            <id>aliyunmaven</id>
+            <name>Aliyun Maven</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>

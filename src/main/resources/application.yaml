@@ -1,11 +1,12 @@
+server:
+  port: 8088
+
 spring:
   application:
     name: niegeai
 
   ai:
+    # 通义千问
     dashscope:
       api-key: ${DASHSCOPE_API_KEY}   # 你的阿里云百炼API Key
-      chat:
-        options:
-          model: qwen-turbo       # 模型
-          temperature: 0.7        # 随机性
+      model: qwen-turbo
