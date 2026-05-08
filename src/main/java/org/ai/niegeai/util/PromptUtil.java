@@ -1,8 +1,11 @@
 package org.ai.niegeai.util;
 
+import org.springframework.ai.chat.messages.Message;
 import org.springframework.ai.chat.messages.SystemMessage;
 import org.springframework.ai.chat.messages.UserMessage;
 import org.springframework.ai.chat.prompt.Prompt;
+
+import java.util.List;
 
 public class PromptUtil {
 
@@ -26,7 +29,8 @@ public class PromptUtil {
     public static Prompt buildMallChatPrompt(String userMsg) {
         SystemMessage systemMessage = new SystemMessage(MALL_CUSTOMER_SERVICE_PROMPT);
         UserMessage userMessage = new UserMessage(userMsg);
-        return new Prompt(systemMessage, userMessage);
+        List<Message> messageList = List.of(systemMessage, userMessage);
+        return new Prompt(messageList);
     }
 
     /**

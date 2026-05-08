@@ -2,10 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.3.4</version>
+        <version>3.2.10</version>
         <relativePath/>
     </parent>
 
@@ -13,11 +14,10 @@
     <artifactId>niegeai</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>niegeai</name>
-    <description>Java SpringAI RAG Demo</description>
+    <description>Spring AI</description>
 
     <properties>
         <java.version>17</java.version>
-        <spring-ai-alibaba.version>1.1.2.2</spring-ai-alibaba.version>
     </properties>
 
     <dependencies>
@@ -26,40 +26,30 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- ========== 通义千问（阿里云官方，100%不报错） ========== -->
+        <!-- ✅ 唯一需要的依赖，自带向量库，自带所有功能 -->
         <dependency>
-            <groupId>com.alibaba.cloud.ai</groupId>
-            <artifactId>spring-ai-alibaba-starter-dashscope</artifactId>
-            <version>${spring-ai-alibaba.version}</version>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-openai-spring-boot-starter</artifactId>
+            <version>0.8.0</version>
         </dependency>
 
-        <!-- 文心一言（千帆·正确包！你找到的这个！） -->
-<!--        <dependency>-->
-<!--            <groupId>org.springaicommunity</groupId>-->
-<!--            <artifactId>qianfan-spring-boot-starter</artifactId>-->
-<!--            <version>1.0.0</version>-->
-<!--        </dependency>-->
-
-        <!-- .env 配置 -->
         <dependency>
             <groupId>io.github.cdimascio</groupId>
             <artifactId>dotenv-java</artifactId>
             <version>3.0.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
-    <!-- 阿里云Maven仓库，下载飞快 -->
     <repositories>
         <repository>
-            <id>maven-central</id>
-            <name>Central Repository</name>
-            <url>https://repo1.maven.org/maven2</url>
-        </repository>
-        <repository>
-            <id>aliyunmaven</id>
-            <name>Aliyun Maven</name>
-            <url>https://maven.aliyun.com/repository/public</url>
+            <id>spring-milestones</id>
+            <url>https://repo.spring.io/milestone</url>
         </repository>
     </repositories>
 

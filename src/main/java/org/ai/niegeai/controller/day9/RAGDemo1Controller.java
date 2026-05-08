@@ -1,6 +1,6 @@
 package org.ai.niegeai.controller.day9;
 
-import com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel;
+import org.springframework.ai.chat.ChatClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,12 +11,12 @@ import java.util.List;
 @RestController
 public class RAGDemo1Controller {
 
-    private final DashScopeChatModel chatModel;
+    private final ChatClient chatClient;
 
     private final List<String> knowledgeBase = new ArrayList<>();
 
-    public RAGDemo1Controller(DashScopeChatModel chatModel) {
-        this.chatModel = chatModel;
+    public RAGDemo1Controller(ChatClient chatClient) {
+        this.chatClient = chatClient;
         initKnowledge();
     }
 
@@ -37,6 +37,6 @@ public class RAGDemo1Controller {
                 context + "\n" +
                 "用户的问题："+question+"\n" ;
 
-        return chatModel.call(prompt);
+        return chatClient.call(prompt);
     }
 }

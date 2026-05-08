@@ -1,6 +1,6 @@
 package org.ai.niegeai.controller.day12;
 
-import com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel;
+import org.springframework.ai.chat.ChatClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AiDay12Controller {
 
-    private final DashScopeChatModel dashScopeChatModel;
+    private final ChatClient chatClient;
 
-    public AiDay12Controller(DashScopeChatModel dashScopeChatModel) {
-        this.dashScopeChatModel = dashScopeChatModel;
+    public AiDay12Controller(ChatClient chatClient) {
+        this.chatClient = chatClient;
     }
 
     @GetMapping("/ai/dashscope")
     public String dashscope(@RequestParam(defaultValue = "你好") String msg) {
-        return dashScopeChatModel.call(msg);
+        return chatClient.call(msg);
     }
 
     /**
@@ -25,7 +25,7 @@ public class AiDay12Controller {
     @GetMapping("/ai/chat")
     public String chat(@RequestParam String type, @RequestParam String msg) {
         if ("dashscope".equals(type)) {
-            return dashScopeChatModel.call(msg);
+            return chatClient.call(msg);
         } else {
             return "不支持的模型类型";
         }

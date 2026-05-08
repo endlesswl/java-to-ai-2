@@ -10,3 +10,9 @@ spring:
     dashscope:
       api-key: ${DASHSCOPE_API_KEY}   # 你的阿里云百炼API Key
       model: qwen-turbo
+    observations:
+      enabled: false  # 关闭全局限流监控，直接解决问题
+
+    openai:
+      api-key: sk-sssss
+      base-url: https://localhost

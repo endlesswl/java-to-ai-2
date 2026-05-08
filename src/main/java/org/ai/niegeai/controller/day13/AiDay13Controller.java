@@ -1,8 +1,8 @@
 package org.ai.niegeai.controller.day13;
 
-import com.alibaba.cloud.ai.dashscope.chat.DashScopeChatModel;
 import jakarta.annotation.Resource;
 import org.ai.niegeai.util.PromptUtil;
+import org.springframework.ai.chat.ChatClient;
 import org.springframework.ai.chat.messages.AssistantMessage;
 import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AiDay13Controller {
 
     @Resource
-    private DashScopeChatModel dashScopeChatModel;
+    private ChatClient dashScopeChatModel;
 //
 //    @Resource
 //    private QianFanChatModel qianfanChatModel;
